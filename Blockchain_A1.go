@@ -1,3 +1,4 @@
+// package main
 package main
 
 import (
@@ -8,7 +9,7 @@ import (
 	"strconv"
 	"time"
 )
-
+// structure for the blocks
 type Block struct {
 	Index       int
 	Timestamp   string
@@ -17,7 +18,7 @@ type Block struct {
 	PrevHash    string
 	nonce       int
 }
-
+ // calculating hash 
 func (b *Block) CreateHash() string {
 	record := strconv.Itoa(b.Index) + b.Timestamp + b.transaction + b.PrevHash + strconv.Itoa(b.nonce)
 	h := sha256.New()
